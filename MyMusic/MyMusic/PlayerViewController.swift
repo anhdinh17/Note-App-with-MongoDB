@@ -88,12 +88,13 @@ class PlayerViewController: UIViewController {
                 return
             }
             player.volume = 0.5 // set starting volume
-            player.play()
+            player.play() // play the song
             
         }catch{
             print("error")
         }
         
+        //MARK: - Add frame and subviews
         // album cover
         albumImageView.frame = CGRect(x: 10,
                                       y: 10,
@@ -126,7 +127,7 @@ class PlayerViewController: UIViewController {
         holder.addSubview(artistNameLabel)
         holder.addSubview(albumNameLabel)
         
-        // Player Control
+        // Player Control, create buttons
         let nextButton = UIButton()
         let backButton = UIButton()
         
@@ -224,7 +225,7 @@ class PlayerViewController: UIViewController {
         // adjust volume
     }
     
-    // if users swipe down the scree, stop the music
+    // if users swipe down the screen, stop the music
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let player = player {
